@@ -1,0 +1,576 @@
+:root /* цвета */ {
+    --bg-color: #f5f5f5;
+    --text-color: #c16f6f;
+    --accent-color: #f3e1e1;
+    --contrast-color: #d5aaaa;
+    --gray-color: #ccc;
+    --red-color: #ee6e73;
+    --light-grey-color: #eee;
+}
+
+html, body{
+    height: 100%;
+}
+
+body  /* общие правила */ {
+    min-width: 320px;
+    font-family: "Roboto", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+a /* общие правила для ссылок */ {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+a:hover /* для ссылок при наведении */ {
+    text-decoration: none;
+}
+
+img /* общие правила для картинок */ {
+    max-width: 100%;
+    height: auto;
+}
+
+.btn, .dropdown-menu, .form-control /* для кнопок, поиска */ {
+    border-radius: 0;
+}
+
+.form-control:focus /* строка поиска */ {
+    color: var(--text-color);
+    border-color: var(--contrast-color);
+    box-shadow: none;
+}
+
+.form-control::placeholder /* текст поиск */ {
+    color: var(--gray-color);
+}
+
+.btn-secondary /* цвет кнопка поиска */ {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+}
+
+.btn-outline-secondary /* кнопка поиска */ {
+    border-color: var(--accent-color);
+}
+
+.bg-secondary /* кнопка изб.,корзина */ {
+    background-color: var(--contrast-color) !important;
+}
+
+.btn-outline-secondary:hover /* кнопка поиска */ {
+    background-color: var(--accent-color);
+    color: var(--assent-color);
+    border-color: var(--gray-color);
+}
+
+
+/* ===================================Общие правила======================================= */
+
+.wrapper /* списки */ {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main.main{
+    flex: 1 1 auto;
+}
+
+section /* отступы секция примуществ */ {
+    padding: 50px 0;
+}
+
+.section-title /* заголовок */ {
+    position: relative;
+    text-transform: uppercase;
+    color: var(--contrast-color);
+    font-weight: 700;
+}
+
+.section-title span{
+    background-color: var(--bg-color);
+    padding-right: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.section-title::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    top: 50%;
+    left: 0;
+    border-top: 1px dashed var(--text-color);
+    /* z-index: -1; */
+}
+
+/* ===================================Общие правила======================================= */
+
+
+
+
+/* ===================================Header======================================= */
+
+
+.zag{
+    font-family: Pacifico;
+}
+
+.header-top-phone a /* для номера телефона */ {
+    text-decoration: none; /* не подчеркивать */
+}
+
+.header-top-phone a:hover /* для номера телефона при наведении */ {
+    text-decoration: underline; /* подчеркивать */
+}
+
+ul.social-icons /* иконки соц.сетей */ {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+ul.social-icons li /* расстояние между иконками */ {
+    margin-right: 10px;
+}
+
+ul.social-icons a /* иконки */ {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    float: left;
+    text-align: center;
+    transition: all .3s;
+}
+
+ul.social-icons a:hover /* при наведении */ {
+    background-color: var(--contrast-color);
+    color: var(--accent-color);
+}
+
+.three /* расположение кнопок */ {
+    display: flex;
+    justify-content: end;
+}
+
+.header-top .btn /* кнопки */ {
+    background-color: #f5f5f5;
+}
+
+.header-logo /* логотип */ {
+    text-decoration: none; /* без подчеркивания */
+    text-transform: uppercase; /* все заглавные */
+    color: var(--contrast-color);
+    transition: all .3s; /* при наведении меняется за 0.3 секунды */
+}
+
+.header-logo:hover /* при наведение */ {
+    color: var(--accent-color);
+}
+
+.cart-buttons .btn /* кнопки с изб.,корзиной */ {
+    color: var(--contrast-color);
+    transition: all .3s;
+}
+
+.cart-buttons .btn:hover /* кнопки с изб.,корзиной */ {
+    border: 1px solid var(--contrast-color);
+}
+
+.header-bottom /* границы полосы меню */ {
+    border-top: 3px solid var(--text-color); /* полоса над меню */
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3); /* тень под меню */
+}
+
+.header-bottom .navbar, /* цвет полосы меню */ 
+.header-bottom .navbar .dropdown-menu /* цвет выплывающего меню */  {
+    background-color: var(--contrast-color) !important;
+}
+
+.header-bottom .navbar .dropdown-item:hover /* цвет при наведении на позицию из выплывающего меню */  {
+   background-color: var(--text-color) !important;
+}
+
+.header-bottom .navbar .dropdown-item-end:hover /* цвет при наведении на позицию из выплывающего меню */  {
+    background-color: var(--text-color) !important;
+}
+
+.header-bottom .nav-item:first-child .nav-link /* чтобы был одинаковый отступ с логотипом слева */ {
+    padding-left: 0;
+}
+
+.header-bottom .navbar .nav-link /* цвет текста в полосе меню */ {
+    color: var(--accent-color);
+    transition: all .3s;
+    letter-spacing: .1rem;
+}
+
+.header-bottom .navbar .nav-link:hover /* при наведении */ {
+    color: var(--text-color);
+}
+
+.header-bottom .navbar .nav-link.active /* активная страница меню выделяется */ {
+    color: var(--text-color);
+}
+
+.header-bottom .navbar .dropdown-menu{
+    margin-top: 7px;
+}
+
+.headernav-scroll.header-bottom .navbar .offcanvas:not(.show) .nav-link /* уменьшение строки меню при прокручивании страницы */ {
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+
+/* ===================================Header======================================= */
+
+
+
+
+
+
+
+/* =================================== main ======================================= */
+
+.carousel-caption  /* карусель */ {
+    text-shadow: 0 0 2px rgba(0, 0, 0, 1);  /* тень для текста */
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 100px;
+}
+
+.carousel-caption p /* карусель */ {
+    font-size: 1.5rem;  /* размер текста */
+}
+
+
+.advantages .items  /* расстояние заголовка от карточки */ {
+    margin-top: 50px;
+}
+
+.advantages .items .item /* карточка */ {
+    background-color: #fff;
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all .3s;
+
+}
+
+.advantages .items .item:hover{
+    box-shadow: 0 15px 30px -20px rgba(0, 0, 0, 0.5);
+}
+
+.advantages i{
+    font-size: 70px;
+    color: var(--accent-color);
+}
+
+.carousel-caption h1{
+    font-size: 8rem;
+}
+
+/* =================================== main ======================================= */
+
+
+
+
+/* =================================== product ======================================= */
+
+.product-card /* карточка товара */ {
+    transition: all 0.3s; /* плавность при наведении */
+    border: 1px solid var(--gray-color);
+    background-color: #fff;
+    position: relative;
+}
+
+.product-card:hover /* при наведении */ {
+    box-shadow: 0 10px 20px -15px rgba(0, 0, 0, 0.75);
+}
+
+.product-card-offer /* hit и new в кружочке */ {
+    color: #fff;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    text-transform: uppercase;
+}
+
+.product-card-offer>div /* hit и new в кружочке */ {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.offer-hit{
+    background-color: var(--red-color);
+}
+
+.offer-new{
+    background-color: var(--accent-color);
+}
+
+.product-thumb /* картинка в карточке */ {
+    text-align: center;
+}
+
+.product-thumb img /* картинка в карточке */ {
+    min-height: 250px;
+}
+
+.product-details /* текст в карточке */ {
+    padding: 10px 20px;
+}
+
+.product-details h4 /* заголовок в карточке */ {
+    font-size: 1.4rem;
+    padding-top: 10px;
+}
+
+.product-details h4 a /* ограничение заголовка в 2 строки */ {
+    height: 45px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-decoration: none;
+    transition: all .3s;
+    color: var(--contrast-color);
+}
+
+.product-details h4 a:hover{
+    color: var(--accent-color);
+}
+
+.product-excerpt /* описание в карточке */ {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    height: 45px;
+    overflow: hidden;
+}
+
+.product-bottom-details{
+    border-top: 1px solid var(--light-grey-color); /* полоса между описанием и ценой */
+    padding-top: 1rem; /* полоса между описанием и ценой */
+}
+
+.product-price /* цена в карточке */ {
+    font-size: 20px;
+    color: var(--red-color);
+    font-weight: 600;
+}
+
+.product-price small{
+    color: var(--gray-color);
+    font-weight: 400;
+    text-decoration: line-through;
+    font-size: 1rem;
+}
+
+.owl-carousel-full .owl-item img {
+    display: inline-block;
+    width: auto;
+}
+
+/* =================================== product ======================================= */
+
+
+/* ============================= About Us ============================ */
+.about-us {
+    background-color: #fff;
+}
+
+.about-us .section-title span,
+.sidebar .section-title span {
+    background-color: #fff;
+}
+
+/* ============================= About Us ============================ */
+
+/* ============================= Footer ============================ */
+footer {
+    background-color: var(--contrast-color);
+    padding: 50px 0;
+    color: #fff;
+}
+
+footer h4 {
+    color: var(--accent-color);
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+footer a:hover {
+    color: var(--accent-color);
+}
+
+.footer-icons {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    font-size: 20px;
+}
+
+/* ============================= Footer ============================ */
+
+#top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--text-color);
+    opacity: .5;
+    color: #fff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 0;
+    font-size: 25px;
+    transition: all .5s;
+    z-index: 10;
+    display: none;
+}
+
+#top:hover {
+    opacity: 1;
+}
+
+/* ============================= Main ============================ */
+
+/* ============================= Category Page ============================ */
+.breadcrumbs {
+    margin: 30px 0;
+    background-color: #fff;
+    padding: 1rem;
+}
+
+.breadcrumbs ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: var(--contrast-color);
+    transition: all .5s;
+    margin-right: 0.5rem;
+}
+
+.breadcrumbs a:hover {
+    color: var(--accent-color);
+}
+
+.breadcrumbs a::after {
+    content: "/";
+    padding-left: 0.5rem;
+    color: var(--contrast-color);
+}
+
+.sidebar {
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.filter-block:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.filter-block .form-check {
+    margin-bottom: 0.5rem;
+}
+
+.form-check-input[type="checkbox"] {
+    border-radius: 0;
+    border-color: var(--gray-color);
+}
+
+.form-check-input:focus {
+    border-color: var(--gray-color);
+    box-shadow: none;
+}
+
+.form-check-input:checked {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.filter-block .badge {
+    color: var(--text-color);
+}
+
+.page-link {
+    color: var(--contrast-color);
+}
+
+.page-link:hover {
+    color: #fff;
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.active>.page-link,
+.page-link.active {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.sidebar .collapse-filters-btn {
+    color: var(--contrast-color);
+}
+
+/* ============================= Category Page ============================ */
+
+
+/* ===================================медиа-запросы======================================= */
+
+@media only screen and (min-width: 992px) /* для максимальной ширины экрана */ {
+    .header-bottom .navbar .dropdown-menu-end /* убираем отступы между окнами разворачивающимися меню */{
+        margin-left: 0;
+        border: 0;
+    }
+
+    .header-bottom .navbar .nav-link{
+        padding: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 991.98px) /* для минимальной ширины экрана(мобильная версия) */ {
+    .header-bottom .navbar .dropdown-menu /* отступ второго меню, чтобы не сливалось с первым */ {
+        padding-left: 1rem;
+    }
+}
+
+@media only screen and (min-width : 768px) {
+    .sidebar .collapse-filters {
+        display: block;
+    }
+
+    .sidebar .collapse-filters-btn {
+        display: none;
+    }
+}
+
+/* ===================================медиа-запросы======================================= */

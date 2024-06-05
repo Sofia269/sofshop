@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SofShop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"> <!-- шрифт -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- иконки -->
+    <link rel="stylesheet" href="assets/owlcarousel/owl.carousel.min.css">
+	<link rel="stylesheet" href="assets/owlcarousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> <!-- css-bootstrap -->
+    <link rel="stylesheet" href="assets/css/main.css"> <!-- css-bootstrap -->
+</head>
+
+
+
+
+
+
+<body>
+
+    <div class="wrapper">
+
+        <header class="header">     <!-- шапка магазина -->
+
+            <div class="header-top py-1">    <!-- верхняя часть шапки -->
+                <div class="container-fluid">   <!-- вся ширина без ограничений -->
+                    <div class="row">   <!-- колонки -->
+                        
+                        
+                        <div class="col-6 col-sm-4">    <!-- номер телефона -->
+                            <div class="header-top-phone d-flex align-items-center h-100">
+                                <i class="fa-solid fa-phone"></i>   <!-- иконка -->
+                                <a href="tel:+1234567890" class="ms-2">123-456-7890</a>    <!-- номер телефона -->
+                            </div>
+                        </div>
+                        
+
+                        <div class="col-sm-4 d-none d-sm-block">
+                            <ul class="social-icons">   <!-- список иконок соц.сетей -->
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-vk"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-telegram"></i></a></li>
+                            </ul>
+                        </div>
+
+
+                        <div class="col-6 col-sm-4">  <!-- кнопки -->
+                            <div class="three">     <!-- для стилей -->
+                            <div class="btn-group me-2">
+                                <div class="dropdown">
+                                    <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      Аккаунт
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                      <li><a class="dropdown-item" href="#">Вход</a></li>
+                                      <li><a class="dropdown-item" href="#">Регистрация</a></li>
+                                    </ul>
+                                  </div>
+                            </div>
+
+                            <div class="btn-group">
+                                <div class="dropdown">
+                                    <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      RU
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                      <li><a class="dropdown-item" href="#">EN</a></li>
+                                      <li><a class="dropdown-item" href="#">DE</a></li>
+                                    </ul>
+                                  </div>
+                            </div>
+                            </div>  <!-- для стилей -->
+                        </div>  <!-- кнопки -->
+
+                    </div>
+                </div>
+            </div>    <!-- конец верхней части шапки -->
+
+
+            <div class="header-middle bg-white py-4">   <!-- средняя часть шапки -->
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        
+                        <div class="zag col-sm-6 col-lg-4">
+                            <a href="index.html" class="header-logo h1">SofShop</a>
+                        </div>
+
+
+                        <div class="col-lg-4 order-md-2 cart-buttons text-end d-none d-lg-block">   <!-- кнопки --> 
+
+                            <a href="#" class="btn p-1">    <!-- избранное -->
+                                <i class="fa-solid fa-heart"></i>
+                                <span class="badge text-bg-secondary cart-badge bg-secondary rounded-circle">5</span>
+                            </a>
+
+                            <button class="btn p-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">  <!-- корзина -->
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span class="badge text-bg-secondary cart-badge bg-secondary rounded-circle">5</span>
+                            </button>
+
+                        </div> <!-- кнопки -->
+
+                        <div class="col-lg-4 col-sm-6 order-md-1 mt-2 mt-md-0">  <!-- поисковая строка -->
+                            <form action="">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="s" placeholder="Поиск..." aria-label="Поиск..." aria-describedby="button-search">
+                                    <button class="btn btn-outline-secondary" type="submit" id="button-search">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                  </div>
+                            </form>
+                        </div>  <!-- конец поисковая строка -->
+
+
+                    </div>
+                </div>
+                
+            </div><!-- конец средней части шапки -->
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel"> <!-- страница корзины -->
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasCartLabel">Корзина</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <div>
+                    Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+                  </div>
+                  <div class="dropdown mt-3">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                      Dropdown button
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item closecart" href="#footer" data-href="footer">Footer</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item closecart" href="#about" data-href="about">About</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item closecart" href="#map" data-href="map">Map</a>
+                        </li>
+                    </ul>
+                  </div>
+                </div>
+              </div> <!-- конец страницы корзины --> 
+
+        </header>   <!-- шапка магазина -->
+
+        <div class="header-bottom sticky-top" id="header-nav">  <!-- нижняя часть шапки(меню), отдельно, чтобы фиксировалась при пролиистывании -->
+
+            <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-start" id="offcanvasNavbar" tabindex="-1" aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Catalog</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="index.html">Главная</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="category.html">Платья</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="category.html">Футболки и топы</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="category.html">Шорты и юбки</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="category.html">Джинсы</a>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+
+                <div class="d-block d-lg-none">
+                    <a href="#" class="btn p-1">    <!-- избранное -->
+                        <i class="fa-solid fa-heart"></i>
+                        <span class="badge text-bg-secondary cart-badge bg-secondary rounded-circle">5</span>
+                    </a>
+
+                    <button class="btn p-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">  <!-- корзина -->
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="badge text-bg-secondary cart-badge bg-secondary rounded-circle">5</span>
+                    </button>
+                </div>
+
+                </div>
+            </nav>
+
+        </div>  <!-- конец нижней часть шапки -->
+
+
+        <main class="main"> <!-- основная часть главной страницы (слайды) -->
+
+            <div id="carousel" class="carousel slide carousel-faid">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="/assets/img/slider/111111.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h1>NEW COLLECTION</h1>
+                      <!-- <p>Some representative placeholder content for the first slide.</p> -->
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h2>Second slide label</h2>
+                      <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h2>Third slide label</h2>
+                      <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+              
+              <!-- <div class="container-fluid">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel nihil, consequuntur recusandae placeat suscipit, a reiciendis amet pariatur totam repellendus ducimus voluptates. Ullam illum ab laboriosam suscipit aperiam dolorum officia?</p>
+              </div> -->
+            
+        </main> <!-- конец основной части -->
+
+
+
+        <section class="featured-products"> <!-- часть с карточками товаров -->
+            <div class="container-fluid">
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <h2 class="section-title">
+                            <span>Новинки</span>
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <!-- первая карточка товара -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">   <!-- картинка в колонке в зависимости от устройства -->
+                        <div class="product-card">
+                            <div class="product-card-offer">
+                                <div class="offer-hit">Hit</div>
+                                <div class="offer-new">New</div>
+                            </div>
+                            <div class="product-thumb">   <!-- картинка товара -->
+                                <a href="product.html"><img src="assets/img/products/1.png" alt=""></a>
+                            </div>
+                            <div class="product-details">   <!-- детали о товаре -->
+                                <h4>
+                                    <a href="products.html">Топ майка варенка в рубчик</a> <!-- название -->
+                                </h4>
+                                <!-- <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, dicta!</p>  описание -->
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price"> <!-- цена -->
+                                        1500₽
+                                        <small>3300₽</small>
+                                    </div>
+                                    <div class="product-links">  <!-- кнопка добавить в корзину -->
+                                        <a href="#" class="btn btn-outline-secondary add-to-cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- вторая карточка товара -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">   <!-- картинка в колонке в зависимости от устройства -->
+                        <div class="product-card">
+                            <div class="product-card-offer">
+                                <div class="offer-hit">Hit</div>
+                                <div class="offer-new">New</div>
+                            </div>
+                            <div class="product-thumb">   <!-- картинка товара -->
+                                <a href="product.html"><img src="assets/img/products/2.png" alt=""></a>
+                            </div>
+                            <div class="product-details">   <!-- детали о товаре -->
+                                <h4>
+                                    <a href="products.html">Рубашка в клетку оверсайз</a> <!-- название -->
+                                </h4>
+                                <!-- <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, dicta!</p>  описание -->
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price"> <!-- цена -->
+                                        2400₽
+                                        <small>4000₽</small>
+                                    </div>
+                                    <div class="product-links">  <!-- кнопка добавить в корзину -->
+                                        <a href="#" class="btn btn-outline-secondary add-to-cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- третья карточка товара -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">   <!-- картинка в колонке в зависимости от устройства -->
+                        <div class="product-card">
+                            <div class="product-card-offer">
+                                <div class="offer-new">New</div>
+                            </div>
+                            <div class="product-thumb">   <!-- картинка товара -->
+                                <a href="product.html"><img src="assets/img/products/3.png" alt=""></a>
+                            </div>
+                            <div class="product-details">   <!-- детали о товаре -->
+                                <h4>
+                                    <a href="products.html">Шорты джинсовые</a> <!-- название -->
+                                </h4>
+                                <!-- <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, dicta!</p>  описание -->
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price"> <!-- цена -->
+                                        2800₽
+                                        <small>5300₽</small>
+                                    </div>
+                                    <div class="product-links">  <!-- кнопка добавить в корзину -->
+                                        <a href="#" class="btn btn-outline-secondary add-to-cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- четвертая карточка товара -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">   <!-- картинка в колонке в зависимости от устройства -->
+                        <div class="product-card">
+                            <div class="product-card-offer">
+                                <div class="offer-new">New</div>
+                            </div>
+                            <div class="product-thumb">   <!-- картинка товара -->
+                                <a href="product.html"><img src="assets/img/products/4.png" alt=""></a>
+                            </div>
+                            <div class="product-details">   <!-- детали о товаре -->
+                                <h4>
+                                    <a href="products.html">Платье летнее</a> <!-- название -->
+                                </h4>
+                                <!-- <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, dicta!</p>  описание -->
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price"> <!-- цена -->
+                                        2300₽
+                                        <small>3800₽</small>
+                                    </div>
+                                    <div class="product-links">  <!-- кнопка добавить в корзину -->
+                                        <a href="#" class="btn btn-outline-secondary add-to-cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <section class="new-products">
+            <div class="container-fluid">
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <h2 class="section-title">
+                            <span>Новинки</span>
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="owl-carousel owl-theme owl-carousel-full">
+                    <div class="product-card">
+                        <div class="product-card-offer">
+                            <div class="offer-new">New</div>
+                        </div>
+                        <div class="product-thumb">   <!-- картинка товара -->
+                            <a href="product.html"><img src="assets/img/products/4.png" alt=""></a>
+                        </div>
+                        <div class="product-details">   <!-- детали о товаре -->
+                            <h4>
+                                <a href="products.html">Платье летнее</a> <!-- название -->
+                            </h4>
+                            <!-- <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, dicta!</p>  описание -->
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price"> <!-- цена -->
+                                    2300₽
+                                    <small>3800₽</small>
+                                </div>
+                                <div class="product-links">  <!-- кнопка добавить в корзину -->
+                                    <a href="#" class="btn btn-outline-secondary add-to-cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="about-us" id="about">
+            <div class="container fluid">
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <h2 class="section-title">
+                            <span>SofShop - это стильная комфортная одежда для женщин и мужчин</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p>Мы стремимся сделать стильный шоппинг доступным в каждом уголке России. 
+                            В нашем интернет-магазине женской и мужской одежды вы можете оформить заказ
+                            всего за несколько минут, оплатить его удобным способом и заказать доставку в любой город.
+                            Курьерская служба доставляет заказы в срок от 1 дня..</p>
+                        <p>Наслаждайтесь покупками, не выходя из дома!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <iframe id="map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2286.7816494060526!2d82.91471347713833!3d55.02951894746709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42dfe5d1930b42bd%3A0x552006dad95c25d4!2z0YPQuy4g0JvQtdC90LjQvdCwLCAzLCDQndC-0LLQvtGB0LjQsdC40YDRgdC6LCDQndC-0LLQvtGB0LjQsdC40YDRgdC60LDRjyDQvtCx0LsuLCA2MzAwOTk!5e0!3m2!1sru!2sru!4v1717594052544!5m2!1sru!2sru" 
+        width="100%" height="450" style="border:0; display: block;" allowfullscreen="" loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    </main>
+
+    <footer class="footer" id="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <h4>Информация</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="#">Payment</a></li>
+                        <li><a href="#">Delivery</a></li>
+                        <li><a href="#">Contacts</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <h4>Часы работы</h4>
+                    <ul class="list-unstyled">
+                        <li>Новосибирск, ул.Ленина,3</li>
+                        <li>пн-вс: 10:00 - 18:00</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <h4>Контакты</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="tel:1234567890">123-456-7890</a></li>
+                        <li><a href="tel:0987654321">098-765-4321</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <h4>Наши соцсети</h4>
+                    <ul class="footer-icons">
+                        <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+        <button id="top">
+            <i class="fa-solid fa-angles-up"></i>
+        </button>
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/owlcarousel/owl.carousel.min.js"></script>
+	<script src="assets/js/main.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,25 @@
+[
+    {
+    "id": 1,
+    "title" : "Капучино",
+    "price" : "10000",
+    "path" : "./img/cards/capuchino.png",
+    "descr": ""
+    },
+
+    {
+    "id": 2,
+    "title" : "Эспрессо",
+    "price" : "200",
+    "path" : "./img/cards/espresso.png",
+    "descr": ""
+    },
+
+    {
+    "id": 3,
+    "title" : "Холодный латте",
+    "price" : "150",
+    "path" : "./img/cards/iced_latte.png",
+    "descr": ""
+    }
+]
